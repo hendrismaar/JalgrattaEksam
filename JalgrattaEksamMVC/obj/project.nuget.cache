@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSEnLf0RXAyMRgc6AxPH9HszPssh1q+1Dki/5LkV45jfgygpm4loO/bYCZuuueaeeyWKhBd5XsAjkEQ/5quZNw==",
+  "dgSpecHash": "N662CNFeZ5qXKYMRQEwKq1xfG/hZBOKlGtQ004OTaSGh8PnKK76Pnimz9eFaHlm0BsjCZjS1Y4OX48+HQADLOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksamMVC\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.13\\microsoft.aspnetcore.cryptography.internal.5.0.13.nupkg.sha512",
