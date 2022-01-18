@@ -1,8 +1,46 @@
 ﻿@model IEnumerable<JalgrattaEksamMVC.Models.Eksam>
 
-@{
-    ViewData["Title"] = "Teooria";
-}
+<h1>@ViewData["Title"]</h1>
 
-<partial name="_Osaeksam" model="Model" view-data='@new ViewDataDictionary(ViewData)
-{{"Osa", nameof(Eksam.Teooria)}}' />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eesnimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Perenimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teooria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Eesnimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Perenimi)
+                </td>
+                <td>
+                    <form asp-action="TeooriaTulemus">
+                        <input type="hidden" asp-for="@item.Id" />
+                        <div class="d-flex ">
+                            <div class="form-group mr-1">
+                                <input type="number" value="@item.Teooria" name="@nameof(item.Teooria)" min="1" max="10" class=" form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

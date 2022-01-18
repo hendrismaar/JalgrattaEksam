@@ -332,6 +332,7 @@ C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\o
 C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\ref\JalgrattaEksamMVC.dll
 C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\JalgrattaEksamMVC.pdb
 C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\JalgrattaEksamMVC.genruntimeconfig.cache
-C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\Razor\Views\_Osaeksam.cshtml.g.cs
 C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\Razor\Views\Eksams\Ring.cshtml.g.cs
 C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\Razor\Views\Eksams\Tänav.cshtml.g.cs
+C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\Razor\Views\Eksams\Luba.cshtml.g.cs
+C:\Users\opilane\Source\Repos\TARpe20\Hendris\JalgrattaEksam\JalgrattaEksamMVC\obj\Debug\net5.0\Razor\Views\Shared\_Osaeksam.cshtml.g.cs

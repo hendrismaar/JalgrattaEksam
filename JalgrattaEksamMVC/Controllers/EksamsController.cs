@@ -68,6 +68,7 @@ namespace JalgrattaEksamMVC.Controllers
             var eksam = await _context.Eksam.FindAsync(tulemus.Id);
             if (eksam == null)
             {
+
                 return NotFound();
             }
             eksam.Teooria = tulemus.Teooria;
