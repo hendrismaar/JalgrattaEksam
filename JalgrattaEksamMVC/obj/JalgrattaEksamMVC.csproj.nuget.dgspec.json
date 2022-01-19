@@ -1,28 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj": {}
+    "C:\\Users\\pc1\\source\\repos\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj": {
+    "C:\\Users\\pc1\\source\\repos\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
+        "projectUniqueName": "C:\\Users\\pc1\\source\\repos\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
         "projectName": "JalgrattaEksamMVC",
-        "projectPath": "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
-        "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\Source\\Repos\\TARpe20\\Hendris\\JalgrattaEksam\\JalgrattaEksamMVC\\obj\\",
+        "projectPath": "C:\\Users\\pc1\\source\\repos\\JalgrattaEksam\\JalgrattaEksamMVC\\JalgrattaEksamMVC.csproj",
+        "packagesPath": "C:\\Users\\pc1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pc1\\source\\repos\\JalgrattaEksam\\JalgrattaEksamMVC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\pc1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -92,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,14 @@
 ﻿@model IEnumerable<JalgrattaEksamMVC.Models.Eksam>
 
+@{
+    ViewData["Title"] = "Teooria";
+}
+
 <h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Registreeri">Registreeri</a>
+</p>
 
 <table class="table">
     <thead>
@@ -29,13 +37,13 @@
                 </td>
                 <td>
                     <form asp-action="TeooriaTulemus">
-                        <input type="hidden" asp-for="@item.Id" />
+                        <input type="hidden" value="@item.Id" name="@nameof(item.Id)" />
                         <div class="d-flex ">
-                            <div class="form-group mr-1">
+                            <div class="form-group">
                                 <input type="number" value="@item.Teooria" name="@nameof(item.Teooria)" min="1" max="10" class=" form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Submit" class="btn btn-primary" />
+                                <input type="submit" value="Salvesta" class="btn btn-primary" />
                             </div>
                         </div>
                     </form>
@@ -43,4 +51,4 @@
             </tr>
         }
     </tbody>
-</table> 
+</table>

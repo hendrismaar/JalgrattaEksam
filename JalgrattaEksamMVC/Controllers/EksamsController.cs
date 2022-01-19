@@ -26,17 +26,17 @@ namespace JalgrattaEksamMVC.Controllers
         }
         public async Task<IActionResult> Slaalom()
         {
-            var model = _context.Eksam.Where(e => e.Teooria == 9 && e.Slaalom == -1);
+            var model = _context.Eksam.Where(e => e.Teooria >= 9 && e.Slaalom == -1);
             return View(await model.ToListAsync());
         }
         public async Task<IActionResult> Ring()
         {
-            var model = _context.Eksam.Where(e => e.Teooria == 9 && e.Ringtee == -1);
+            var model = _context.Eksam.Where(e => e.Teooria >= 9 && e.Ring == -1);
             return View(await model.ToListAsync());
         }
         public async Task<IActionResult> Tänav()
         {
-            var model = _context.Eksam.Where(e => e.Teooria == 9 && e.Tänav == -1);
+            var model = _context.Eksam.Where(e => e.Ring == 1 && e.Slaalom == 1 && e.Tänav == -1);
             return View(await model.ToListAsync());
         }
         public async Task<IActionResult> Luba()
@@ -48,7 +48,7 @@ namespace JalgrattaEksamMVC.Controllers
                     Eesnimi = e.Eesnimi,
                     Perenimi = e.Perenimi,
                     Teooria = e.Teooria,
-                    Ringtee = e.Ringtee== -1? ".": e.Ringtee==1 ? "Õnnestus":"Põrus",
+                    Ring = e.Ring == -1? ".": e.Ring == 1 ? "Õnnestus":"Põrus",
                     Slaalom = e.Slaalom == -1 ? "." : e.Slaalom == 1 ? "Õnnestus" : "Põrus",
                     Tänav = e.Tänav == -1 ? "." : e.Tänav == 1 ? "Õnnestus" : "Põrus",
                     Luba = e.Luba == 1? "Väljastatud": e.Tänav == 1? "Väljasta":"."
@@ -58,41 +58,114 @@ namespace JalgrattaEksamMVC.Controllers
 
         public async Task<IActionResult> PassFail(int Id, string Osa, int Tulemus)
         {
+            var eksam = await _context.Eksam.FindAsync(Id);
+            if (eksam == null)
+            {
+                return NotFound();
+            }
+            switch (Osa)
+            {
+                case nameof(eksam.Slaalom):
+                    {
+                        eksam.Slaalom = Tulemus;
+                        break;
+                    }
+                case nameof(eksam.Ring):
+                    {
+                        eksam.Ring = Tulemus;
+                        break;
+                    }
+                case nameof(eksam.Tänav):
+                    {
+                        eksam.Tänav = Tulemus;
+                        break;
+                    }
+                default:
+                    {
+                        return NotFound();
+                    }
+
+
+            }
+            try
+            {
+                _context.Update(eksam);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EksamExists(eksam.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+
+            }
+
             return RedirectToAction(Osa);
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TeooriaTulemus(int id, [Bind("Id, Teooria")] Eksam tulemus)
+        public async Task<IActionResult> TeooriaTulemus([Bind("Id,Teooria")] Eksam tulemus)
         {
             var eksam = await _context.Eksam.FindAsync(tulemus.Id);
             if (eksam == null)
             {
-
                 return NotFound();
             }
             eksam.Teooria = tulemus.Teooria;
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    _context.Update(eksam);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EksamExists(eksam.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Teooria));
+                _context.Update(eksam);
+                await _context.SaveChangesAsync();
             }
-            return View(eksam);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EksamExists(eksam.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+
+            }
+            return RedirectToAction(nameof(Teooria));
+
+        }
+
+        public async Task<IActionResult> VäljastaLuba(int Id)
+        {
+            var eksam = await _context.Eksam.FindAsync(Id);
+            if (eksam == null)
+            {
+                return NotFound();
+            }
+            eksam.Luba = 1;
+            try
+            {
+                _context.Update(eksam);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EksamExists(eksam.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+
+            }
+
+            return RedirectToAction("Luba");
         }
 
         // GET: Eksams/Create
@@ -154,7 +227,7 @@ namespace JalgrattaEksamMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Eesnimi,Perenimi,Teooria,Slaalom,Ringtee,Tänav,Luba")] Eksam eksam)
+        public async Task<IActionResult> Create([Bind("Id,Eesnimi,Perenimi,Teooria,Slaalom,Ring,Tänav,Luba")] Eksam eksam)
         {
             if (ModelState.IsValid)
             {
@@ -186,7 +259,7 @@ namespace JalgrattaEksamMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Eesnimi,Perenimi,Teooria,Slaalom,Ringtee,Tänav,Luba")] Eksam eksam)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Eesnimi,Perenimi,Teooria,Slaalom,Ring,Tänav,Luba")] Eksam eksam)
         {
             if (id != eksam.Id)
             {

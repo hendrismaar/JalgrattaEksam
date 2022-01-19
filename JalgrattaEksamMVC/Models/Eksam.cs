@@ -19,7 +19,7 @@ namespace JalgrattaEksamMVC.Models
         [Range(-1, 10)]
         public int Teooria { get; set; } = -1;
         public int Slaalom { get; set; } = -1;
-        public int Ringtee { get; set; } = -1;
+        public int Ring { get; set; } = -1;
         public int Tänav { get; set; } = -1;
         public int Luba { get; set; } = -1;
     }

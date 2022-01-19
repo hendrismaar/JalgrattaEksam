@@ -18,7 +18,7 @@ namespace JalgrattaEksamMVC.Data.Migrations
                     Perenimi = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Teooria = table.Column<int>(type: "int", nullable: false),
                     Slaalom = table.Column<int>(type: "int", nullable: false),
-                    Ringtee = table.Column<int>(type: "int", nullable: false),
+                    Ring = table.Column<int>(type: "int", nullable: false),
                     Tänav = table.Column<int>(type: "int", nullable: false),
                     Luba = table.Column<int>(type: "int", nullable: false)
                 },

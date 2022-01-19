@@ -41,7 +41,7 @@ namespace JalgrattaEksamMVC.Data.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<int>("Ringtee")
+                    b.Property<int>("Ring")
                         .HasColumnType("int");
 
                     b.Property<int>("Slaalom")

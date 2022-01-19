@@ -14,7 +14,7 @@ namespace JalgrattaEksamMVC.Models
         public string Perenimi { get; set; }
         public int Teooria { get; set; }
         public string Slaalom { get; set; }
-        public string Ringtee { get; set; }
+        public string Ring { get; set; }
         public string Tänav { get; set; }
         public string Luba { get; set; }
     }
